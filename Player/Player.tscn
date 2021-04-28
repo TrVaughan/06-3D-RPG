@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/skin.material" type="Material" id=1]
-[ext_resource path="res://Assets/cyborgFemaleA.png" type="Texture" id=3]
+[ext_resource path="res://Assets/survivorFemaleA.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Guns/Models/pistol.obj" type="ArrayMesh" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -160,7 +161,7 @@ bind/44/bone = -1
 bind/44/pose = Transform( -0.992803, 0.00958511, -0.119373, -0.119664, -0.039574, 0.992026, 0.00478277, 0.999171, 0.0404359, -0.340618, -0.128335, -0.0149813 )
 
 [sub_resource type="SpatialMaterial" id=4]
-albedo_texture = ExtResource( 3 )
+albedo_texture = ExtResource( 2 )
 
 [sub_resource type="Animation" id=5]
 length = 1.25
@@ -4637,7 +4638,7 @@ animation = "Idle"
 animation = "Run"
 
 [sub_resource type="AnimationNodeBlendTree" id=22]
-graph_offset = Vector2( -151.35, 65.4075 )
+graph_offset = Vector2( 0, 65.5 )
 nodes/Idle/node = SubResource( 19 )
 nodes/Idle/position = Vector2( 130, 70 )
 nodes/Idle_Run/node = SubResource( 20 )
@@ -4886,6 +4887,28 @@ bones/44/bound_children = [  ]
 mesh = SubResource( 2 )
 skin = SubResource( 3 )
 material/0 = SubResource( 4 )
+
+[node name="BoneAttachment" type="BoneAttachment" parent="Root/Skeleton"]
+transform = Transform( -0.811323, 0.133147, 0.569243, 0.440288, -0.501409, 0.74481, 0.384589, 0.854903, 0.348181, -0.662293, 1.33648, 0.221029 )
+bone_name = "right_hand_thumb_1"
+
+[node name="pistol" type="MeshInstance" parent="Root/Skeleton/BoneAttachment"]
+transform = Transform( -9.74801, 6.4497, -2.71619, 1.72443, 6.72762, 9.78604, 6.7825, 7.55911, -6.39192, -0.0127623, 0.293022, -0.0877934 )
+mesh = ExtResource( 3 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack = SubResource( 5 )
